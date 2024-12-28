@@ -45,7 +45,7 @@ jobs:
           fi
 
       - name: Run job if versions differ
-        if: env.versions_differ == 'true'
+        if: env.versions_differ == 'false'
         run: |
           curl -X POST \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
