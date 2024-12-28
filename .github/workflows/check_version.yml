@@ -1,8 +1,8 @@
 name: Check Version
 
 on:
-  # schedule:
-  #   - cron: '0 * * * *' 
+  schedule:
+    - cron: '0 * * * *' 
   workflow_dispatch:
 
 jobs:
@@ -47,7 +47,7 @@ jobs:
           fi
 
       - name: Run job if versions differ
-        if: env.versions_differ == 'false'
+        if: env.versions_differ == 'true'
         run: |
           curl -X POST \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
