@@ -42,6 +42,7 @@ jobs:
             echo "versions_differ=true" >> $GITHUB_OUTPUT
           else
             echo "versions_differ=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Run job if versions differ
         if: env.versions_differ == 'true'
