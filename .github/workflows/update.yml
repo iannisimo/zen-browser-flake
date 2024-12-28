@@ -1,8 +1,9 @@
 name: Update Zen Browser Version
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight
+  repository_dispatch:
+    types:
+      - run-update
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
