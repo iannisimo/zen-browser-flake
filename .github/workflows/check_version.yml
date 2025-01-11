@@ -38,6 +38,8 @@ jobs:
       - name: Compare with specified version
         id: compare_versions
         run: |          
+          echo "Debug: file_version=$file_version"
+          echo "Debug: target_version=$target_version"
           if [ "$file_version" != "$target_version" ]; then
             echo "versions_differ=true"
             echo "versions_differ=true" >> $GITHUB_ENV
