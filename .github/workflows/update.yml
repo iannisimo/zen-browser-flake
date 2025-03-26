@@ -29,7 +29,7 @@ jobs:
       - name: Extract version
         id: extract_version
         run: |
-          VERSION=$(echo '${{ steps.get_release.outputs.data }}' | jq -r .tag_name)
+          VERSION='${{ fromJson(steps.get_release.outputs.data).tag_name }}'
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Update flake.nix
